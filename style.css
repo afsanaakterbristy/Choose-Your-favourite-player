@@ -30,4 +30,19 @@ body{
 .image{
     height: 250px;
 }
- 
+.text2{
+    color: rgba(255, 94, 25, 1);
+}
+.manager{
+    margin-left: 25px;
+}
+.coach{
+    margin-left: 43px;
+}
+ul{
+    margin-top: 50px;
+}
+ol{
+    font-size: 30px;
+  
+}
