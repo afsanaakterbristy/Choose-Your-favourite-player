@@ -1,0 +1,33 @@
+body{
+    background-color: rgba(21, 21, 21, 1);
+}
+
+.player-header {
+    background-image: url(image/football.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 200px;
+    color: white;
+
+}
+.title {
+    margin-bottom: 30px;
+    font-size: 50px;
+    color: rgba(255, 94, 25, 1);
+    
+
+}
+.para {
+   font-size: 20px;
+    margin-left: 15%;
+        margin-right: 15%;
+}
+.text{
+    color: gray;
+}
+.image{
+    height: 250px;
+}
+ 
