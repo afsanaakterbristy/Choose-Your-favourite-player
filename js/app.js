@@ -23,6 +23,7 @@ for (let btns of btn) {
     btns.addEventListener('click', function (event) {
         event.target.classList.add('disabled');
         btns.style.backgroundColor = 'grey';
+        btns.style.borderStyle = 'none';
         
     });
 }
