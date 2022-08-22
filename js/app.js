@@ -1,75 +1,63 @@
+const playerArray = [];
+function display(playerDisplay) {
+    const tablebody = document.getElementById('new-player');
+  
+    tablebody.innerHTML = "";
+    for (let i = 0; i < playerDisplay.length; i++) {
+        const playerName = playerArray[i];
+        
+        const tr = document.createElement("tr");
+        tr.innerHTML = ` 
+                        <th>${i+1}</th>
+                        <td>${playerName}</td>
+                    `;
+        tablebody.appendChild(tr);
+       
+
+    }
+}
+let btn = document.getElementsByClassName('btn-select');
+for (let btns of btn) {
+    btns.addEventListener('click', function (event) {
+        event.target.classList.add('disabled')
+    })
+}
+
+function allPlayer(element) {
+    const playerName = element.parentNode.parentNode.children[1].innerText;
+    
+    if (playerArray.length < 5) {
+       playerArray.push(playerName);
+    display(playerArray); 
+    } else {
+        alert('not allow');
+        return;
+   }
+   
+
+}
 
 
-document.getElementById('btn-select-one').addEventListener('click', function () {
-    const nameOne = document.getElementById('name-one');
-    const newNameOne = nameOne.innerText;
-    const placeList = document.getElementById('player-list');
-    const li = document.createElement('li');
-    li.innerText = newNameOne;
-    placeList.appendChild(li);
-    
-});
-document.getElementById('btn-select-two').addEventListener('click', function () {
-    const nameOne = document.getElementById('name-two');
-    const newNameOne = nameOne.innerText;
-    const placeList = document.getElementById('player-list');
-    const li = document.createElement('li');
-    li.innerText = newNameOne;
-    placeList.appendChild(li);
-    
-});
-document.getElementById('btn-select-three').addEventListener('click', function () {
-    const nameOne = document.getElementById('name-three');
-    const newNameOne = nameOne.innerText;
-    const placeList = document.getElementById('player-list');
-    const li = document.createElement('li');
-    li.innerText = newNameOne;
-    placeList.appendChild(li);
-    
-});
-document.getElementById('btn-select-four').addEventListener('click', function () {
-    const nameOne = document.getElementById('name-four');
-    const newNameOne = nameOne.innerText;
-    const placeList = document.getElementById('player-list');
-    const li = document.createElement('li');
-    li.innerText = newNameOne;
-    placeList.appendChild(li);
-    
-});
-document.getElementById('btn-select-five').addEventListener('click', function () {
-    const nameOne = document.getElementById('name-five');
-    const newNameOne = nameOne.innerText;
-    const placeList = document.getElementById('player-list');
-    const li = document.createElement('li');
-    li.innerText = newNameOne;
-    placeList.appendChild(li);
-    
-});
-document.getElementById('btn-select-six').addEventListener('click', function () {
-    const nameOne = document.getElementById('name-six');
-    const newNameOne = nameOne.innerText;
-    const placeList = document.getElementById('player-list');
-    const li = document.createElement('li');
-    li.innerText = newNameOne;
-    placeList.appendChild(li);
-    
-});
+
 
   let player;
 function playerCalculate() {
     const perPlayer = document.getElementById('per-player');
-    const playerExpenses = document.getElementById('player-expenses');
-
+    
+    
     const newPerPlayerString = perPlayer.value;
-    const newPerPlayer=parseInt(newPerPlayerString)
+    const newPerPlayer = parseInt(newPerPlayerString);
+    let playerLength = playerArray.length;
+    player = newPerPlayer * playerLength;
+   
     if (isNaN(newPerPlayer) || newPerPlayer<=0) {
         alert('Please Enter a valiad number');
         return;
     }
-    player = 5 * newPerPlayer;
+    const playerExpenses = document.getElementById('player-expenses');
     playerExpenses.innerText = player;
 }
-
+ 
 function totalCalculation() {
     const manager = document.getElementById('manager');
     const newManagerString = manager.value;
