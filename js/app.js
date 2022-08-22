@@ -1,8 +1,9 @@
+// All player list
+
 const playerArray = [];
 function display(playerDisplay) {
-    const tablebody = document.getElementById('new-player');
-  
-    tablebody.innerHTML = "";
+    const tableBody = document.getElementById('new-player');
+    tableBody.innerHTML = "";
     for (let i = 0; i < playerDisplay.length; i++) {
         const playerName = playerArray[i];
         
@@ -11,17 +12,22 @@ function display(playerDisplay) {
                         <th>${i+1}</th>
                         <td>${playerName}</td>
                     `;
-        tablebody.appendChild(tr);
-       
+        tableBody.appendChild(tr);
 
     }
 }
+
+// For disable button after click
 let btn = document.getElementsByClassName('btn-select');
 for (let btns of btn) {
     btns.addEventListener('click', function (event) {
-        event.target.classList.add('disabled')
-    })
+        event.target.classList.add('disabled');
+        btns.style.backgroundColor = 'grey';
+        
+    });
 }
+
+//Find Player lenght with element
 
 function allPlayer(element) {
     const playerName = element.parentNode.parentNode.children[1].innerText;
@@ -30,18 +36,14 @@ function allPlayer(element) {
        playerArray.push(playerName);
     display(playerArray); 
     } else {
-        alert('not allow');
+        alert('You are not allow to select more than five');
         return;
    }
-   
-
 }
 
-
-
-
-  let player;
-function playerCalculate() {
+// player Budget calculation
+    let player;
+    function playerCalculate() {
     const perPlayer = document.getElementById('per-player');
     
     
@@ -58,6 +60,7 @@ function playerCalculate() {
     playerExpenses.innerText = player;
 }
  
+// pTotal Budget calculation
 function totalCalculation() {
     const manager = document.getElementById('manager');
     const newManagerString = manager.value;
