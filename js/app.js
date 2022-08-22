@@ -59,6 +59,7 @@ function allPlayer(element) {
     }
     const playerExpenses = document.getElementById('player-expenses');
     playerExpenses.innerText = player;
+    perPlayer.value = '';
 }
  
 // pTotal Budget calculation
@@ -76,6 +77,8 @@ function totalCalculation() {
     const total = player + newManager + newCoach;
     const finalTotal = document.getElementById('final-total');
     finalTotal.innerText = total;
+    manager.value = '';
+    coach.value = '';
 }
 
 document.getElementById('calculate').addEventListener('click', function () {
