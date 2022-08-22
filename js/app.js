@@ -1,4 +1,5 @@
 
+
 document.getElementById('btn-select-one').addEventListener('click', function () {
     const nameOne = document.getElementById('name-one');
     const newNameOne = nameOne.innerText;
@@ -61,7 +62,10 @@ function playerCalculate() {
 
     const newPerPlayerString = perPlayer.value;
     const newPerPlayer=parseInt(newPerPlayerString)
-  
+    if (isNaN(newPerPlayer) || newPerPlayer<=0) {
+        alert('Please Enter a valiad number');
+        return;
+    }
     player = 5 * newPerPlayer;
     playerExpenses.innerText = player;
 }
@@ -73,18 +77,21 @@ function totalCalculation() {
     const coach = document.getElementById('coach');
     const newCoachString = coach.value;
     const newCoach = parseInt(newCoachString)
-   
+    if (isNaN(newManager) || newManager<=0||isNaN(newCoach) || newCoach<=0) {
+        alert('Please Enter a valiad number');
+        return;
+    }
     const total = player + newManager + newCoach;
     const finalTotal = document.getElementById('final-total');
     finalTotal.innerText = total;
 }
 
-    document.getElementById('calculate').addEventListener('click', function () {
-        playerCalculate();  
+document.getElementById('calculate').addEventListener('click', function () {
+    playerCalculate();
 
-   })
-    document.getElementById('total-calculate').addEventListener('click', function () {
-        totalCalculation();
+});
+document.getElementById('total-calculate').addEventListener('click', function () {
+    totalCalculation();
       
-})
+});
 
